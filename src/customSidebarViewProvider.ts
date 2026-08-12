@@ -13,7 +13,13 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
   resolveWebviewView(
     webviewView: vscode.WebviewView,
     context: vscode.WebviewViewResolveContext<unknown>,
-    token: vscode.CancellationToken
+    token: vscode.CancellationToken,
+    test: "a",
+    test2: "b",
+    test3: "c",
+    test4: "d",
+    test5: "e",
+    test6: "f"
   ): void | Thenable<void> {
     this._view = webviewView;
 
@@ -36,42 +42,42 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
     const numProblems = diagnostics.length;
 
     const scriptUri = webview.asWebviewUri(
-        vscode.Uri.joinPath(this._extensionUri, "assets", "main.js")
+      vscode.Uri.joinPath(this._extensionUri, "assets", "main.js")
     );
 
     const styleResetUri = webview.asWebviewUri(
-        vscode.Uri.joinPath(this._extensionUri, "assets", "reset.css")
+      vscode.Uri.joinPath(this._extensionUri, "assets", "reset.css")
     );
     const styleVSCodeUri = webview.asWebviewUri(
-        vscode.Uri.joinPath(this._extensionUri, "assets", "vscode.css")
+      vscode.Uri.joinPath(this._extensionUri, "assets", "vscode.css")
     );
 
     const stylesheetUri = webview.asWebviewUri(
-        vscode.Uri.joinPath(this._extensionUri, "assets", "main.css")
+      vscode.Uri.joinPath(this._extensionUri, "assets", "main.css")
     );
 
     let imageUrl = '';
     let message = "";
     if (numProblems === 0) {
-        imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "0errors.png")).toString();
-        message = "you make the cat very happy!";
+      imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "0errors.png")).toString();
+      message = "I have written flawless code";
     } else if (numProblems >= 1 && numProblems < 3) {
-        imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "3errors.png")).toString();
-        message = "(uh oh)";
+      imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "3errors.png")).toString();
+      message = "Is small bumg. No panic";
     } else if (numProblems >= 3 && numProblems < 6) {
-        imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "6errors.png")).toString();
-        message = "eughh what's that...";
+      imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "6errors.png")).toString();
+      message = "no, emrror make cheems sadm";
     } else if (numProblems >= 6 && numProblems < 10) {
-        imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "10errors.png")).toString();
-        message = "dude look at what you've done-";
+      imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "10errors.png")).toString();
+      message = "Do not make me do the bomnk, hooman";
     } else {
-        imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "10errors.png")).toString();
-        message = "uhm hello friend, just letting you know, there's code in your bugs";
+      imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "11errors.png")).toString();
+      message = "*BONK*";
     }
 
     const errorMessages = diagnostics.map(diagnostic => {
-        const lineNumber = diagnostic.range.start.line + 1;
-        return `<li id="individualErrors">[Line ${lineNumber}]: ${diagnostic.message}</li>`;
+      const lineNumber = diagnostic.range.start.line + 1;
+      return `<li id="individualErrors">[Line ${lineNumber}]: ${diagnostic.message}</li>`;
     });
 
     const nonce = getNonce();
@@ -95,7 +101,7 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
 
         <body>
             <img src="${imageUrl}" alt="Cat face">
-            <h2>Errors: ${numProblems}</h2>
+            <h2>Emrrors: ${numProblems}</h2>
             <p></p>
             <h3>${message}</h3>
             <ul id="errorMessages">

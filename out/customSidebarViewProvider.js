@@ -30,11 +30,11 @@ class CustomSidebarViewProvider {
         let message = "";
         if (numProblems === 0) {
             imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "0errors.png")).toString();
-            message = "what is emrror?";
+            message = "I have written flawless code";
         }
         else if (numProblems >= 1 && numProblems < 3) {
             imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "3errors.png")).toString();
-            message = "mmm, emrrors...";
+            message = "Is small bumg. No panic";
         }
         else if (numProblems >= 3 && numProblems < 6) {
             imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "6errors.png")).toString();
@@ -42,11 +42,11 @@ class CustomSidebarViewProvider {
         }
         else if (numProblems >= 6 && numProblems < 10) {
             imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "10errors.png")).toString();
-            message = "i'll gramb the bonk";
+            message = "Do not make me do the bomnk, hooman";
         }
         else {
-            imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "10errors.png")).toString();
-            message = "*bonmk";
+            imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "11errors.png")).toString();
+            message = "*BONK*";
         }
         const errorMessages = diagnostics.map(diagnostic => {
             const lineNumber = diagnostic.range.start.line + 1;
