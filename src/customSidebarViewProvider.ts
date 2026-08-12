@@ -14,12 +14,6 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
     webviewView: vscode.WebviewView,
     context: vscode.WebviewViewResolveContext<unknown>,
     token: vscode.CancellationToken,
-    test: "a",
-    test2: "b",
-    test3: "c",
-    test4: "d",
-    test5: "e",
-    test6: "f"
   ): void | Thenable<void> {
     this._view = webviewView;
 
