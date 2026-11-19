@@ -1,15 +1,15 @@
 {
-  "name": "catface",
-  "displayName": "CatFace",
-  "description": "Cats' faces that correlate to the bugs in your code!",
+  "name": "cheemsface",
+  "displayName": "CheemsFace",
+  "description": "Cheems' faces that correlate to the bugs in your code!",
   "version": "2.1.4",
   "publisher": "joshua-long",
   "icon": "assets/0errors.png",
-  "homepage": "https://github.com/Sadliquid/CatFace",
+  "homepage": "https://github.com/MateusLDK/CheemsFace",
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Sadliquid/CatFace"
+    "url": "https://github.com/MateusLDK/CheemsFace"
   },
   "engines": {
     "vscode": "^1.89.0"
@@ -27,7 +27,7 @@
       "activitybar": [
         {
           "id": "custom-activitybar",
-          "title": "CatFace",
+          "title": "CheemsFace",
           "icon": "assets/logo_bito.svg"
         }
       ]
